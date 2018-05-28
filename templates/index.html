@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Multiband Image Clustering</title>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <br><br>
+ 
+        <div class="jumbotron" style="background-color:#76deef;">
+            <h1>Multiband Image Clustering</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Nama Kelompok</th>
+                            <th>NRP</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Adi Putra Utama</td>
+                            <td>2110151034</td>
+                          </tr>
+                          <tr>
+                            <td>Adi Putra Utama</td>
+                            <td>2110151034</td>
+                          </tr>
+                          <tr>
+                            <td>Adi Putra Utama</td>
+                            <td>2110151034</td>
+                          </tr>
+                          <tr>
+                            <td>Adi Putra Utama</td>
+                            <td>2110151034</td>
+                          </tr>
+                          <tr>
+                            <td>Adi Putra Utama</td>
+                            <td>2110151034</td>
+                          </tr>
+                        </tbody>
+                    </table>  
+                </div>
+            </div>
+        </div>
+ 
+        <div class="row" style="padding: 0px 12px 0px 12px;">
+            <div class="panel panel-default">
+                <div class="panel-heading">Data Testing</div>
+                <div class="panel-body">
+                    <img src="../images/gb1.GIF" class="img-thumbnail" alt="gb1.gif" height="100" width="100">
+                    <img src="../images/gb2.GIF" class="img-thumbnail" alt="gb2.gif" height="100" width="100">
+                    <img src="../images/gb3.GIF" class="img-thumbnail" alt="gb3.gif" height="100" width="100">
+                    <img src="../images/gb4.GIF" class="img-thumbnail" alt="gb4.gif" height="100" width="100">
+                    <img src="../images/gb5.GIF" class="img-thumbnail" alt="gb5.gif" height="100" width="100">
+                    <img src="../images/gb7.GIF" class="img-thumbnail" alt="gb7.gif" height="100" width="100">
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Masukkan jumlah cluster : </div>
+                <div class="panel-body">
+                    <form action="process" method="post" target="_blank">
+                        <input type="number" class="form-control" id="cluster" name="cluster"><br>
+                        <center><button type="submit" class="btn btn-success">Process</button></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+ 
+        <footer class="footer">
+            <p align="center">&copy; Company 2018</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
