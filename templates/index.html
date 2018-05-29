@@ -27,7 +27,10 @@
     <div class="container">
         <br><br>
  
-        <div class="jumbotron" style="background-color:#76deef;">
+        <div class="jumbotron" 
+            style=" background-color:#76deef;
+                    background-image: radial-gradient(#ffffff, #76deef, #76deef);
+                    ">
             <h1>Multiband Image Clustering</h1>
             <div class="row">
                 <div class="col-md-6">
@@ -81,7 +84,7 @@
                 <div class="panel-heading" style="background-color: #76deef;">Masukkan jumlah cluster : </div>
                 <div class="panel-body">
                     <form name="myForm" onsubmit="return validateForm()" action="process" method="post" target="_blank">
-                        <input type="number" class="form-control" id="cluster" name="cluster" value="4"><br>
+                        <input type="number" class="form-control" id="cluster" name="cluster"><br>
                         <center><button type="submit" class="btn btn-success">Process</button></center>
                     </form>
                 </div>
