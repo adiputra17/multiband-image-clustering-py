@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+    function validateForm() {
+        var x = document.forms["myForm"]["cluster"].value;
+        if (x == "") {
+            alert("Jumlah cluster tidak boleh kosong!");
+            return false;
+        }
+    }
+    </script>
  
 </head>
  
@@ -34,20 +44,20 @@
                             <td>2110151034</td>
                           </tr>
                           <tr>
-                            <td>Adi Putra Utama</td>
-                            <td>2110151034</td>
+                            <td>Maulana Rahmatullah</td>
+                            <td>21101510--</td>
                           </tr>
                           <tr>
-                            <td>Adi Putra Utama</td>
-                            <td>2110151034</td>
+                            <td>Adhisma Azahra Sidinanda</td>
+                            <td>21101510--</td>
                           </tr>
                           <tr>
-                            <td>Adi Putra Utama</td>
-                            <td>2110151034</td>
+                            <td>Ma'arif</td>
+                            <td>21101510--</td>
                           </tr>
                           <tr>
-                            <td>Adi Putra Utama</td>
-                            <td>2110151034</td>
+                            <td>Karina Faradila Hapsari</td>
+                            <td>21101510--</td>
                           </tr>
                         </tbody>
                     </table>  
@@ -57,7 +67,7 @@
  
         <div class="row" style="padding: 0px 12px 0px 12px;">
             <div class="panel panel-default">
-                <div class="panel-heading">Data Testing</div>
+                <div class="panel-heading" style="background-color: #76deef;">Data Testing</div>
                 <div class="panel-body">
                     <img src="../images/gb1.GIF" class="img-thumbnail" alt="gb1.gif" height="100" width="100">
                     <img src="../images/gb2.GIF" class="img-thumbnail" alt="gb2.gif" height="100" width="100">
@@ -68,10 +78,10 @@
                 </div>
             </div>
             <div class="panel panel-default">
-                <div class="panel-heading">Masukkan jumlah cluster : </div>
+                <div class="panel-heading" style="background-color: #76deef;">Masukkan jumlah cluster : </div>
                 <div class="panel-body">
-                    <form action="process" method="post" target="_blank">
-                        <input type="number" class="form-control" id="cluster" name="cluster" value="3"><br>
+                    <form name="myForm" onsubmit="return validateForm()" action="process" method="post" target="_blank">
+                        <input type="number" class="form-control" id="cluster" name="cluster" value="4"><br>
                         <center><button type="submit" class="btn btn-success">Process</button></center>
                     </form>
                 </div>
@@ -79,7 +89,7 @@
         </div>
  
         <footer class="footer">
-            <p align="center">&copy; Company 2018</p>
+            <p align="center">&copy; SKS Company 2018</p>
         </footer>
  
     </div>

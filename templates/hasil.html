@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Multiband Image Clustering</title>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <br><br>
+ 
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #76deef;">Jumlah Cluster </div>
+                <div class="panel-body">
+                    {{ cluster }}
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #76deef;">Hasil Image Clustering </div>
+                <div class="panel-body">
+                     <img src="../images/{{ url_image }}" class="img-thumbnail" alt="result.jpg" height="100" width="100">
+                </div>
+            </div>
+        </div>
+ 
+        <footer class="footer">
+            <p align="center">&copy; SKS Company 2018</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>

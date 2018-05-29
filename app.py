@@ -71,6 +71,10 @@ def process():
         list_tmp  = []
         sum_list_tmp = 0
         hash_tmp  = []
+        sum_boolean = 0
+        sum_data  = 1024
+        c         = 0
+        label     = []
 
         # get pixel then enter to array
         for i in xrange(0,width):
@@ -88,18 +92,15 @@ def process():
                 x = x + 1
 
         # print str(list_data[1023][1])
-        # fill_array_is_looping(is_looping)
 
         while len(list_data) > int(cluster):
             min_value = 9999.0
             index1, index2, T, i, j, k = 0, 0, 0, 0, 0, 0
+            # print str(len(list_data))
             for i in xrange(0,1024): #baris 1
                 for j in xrange(0,1024): #baris 2
                     if is_looping[i] == True and is_looping[j] == True:
                         for k in xrange(0,6): #kolom
-                            # print(str(i)+"-"+str(j))
-                            # if list_data[i][k] != [] and list_data[j][k] != []:
-                            # print str(list_data[i])+'-'+str(list_data[j])
                             T = list_data[i][k] - list_data[j][k]
                             
                             sum_list_tmp += math.pow(abs(T),2)
@@ -117,17 +118,40 @@ def process():
 
             # print str(min_value)
             if min_value != 9999.0:
-                print 'DATA MINIMAL : '+str(index1)+' : '+str(index2)+' : '+str(min_value) 
+                # print 'DATA MINIMAL : '+str(index1)+' : '+str(index2)+' : '+str(min_value) 
 
+                is_looping[index1] = False
                 is_looping[index2] = False
-                
-                for h in xrange(0,6):
-                    hash_tmp.append((int(list_data[index1][h]) + int(list_data[index2][h]))/2)
 
-                print 'NEW DATA : '+str(hash_tmp)
-                list_data[index1] = copy.copy(hash_tmp)
-                hash_tmp[:]       = []
-                
+                if is_looping[index1] == False and is_looping[index2] == False: #Count False
+                    sum_boolean += 2
+
+                if sum_boolean == sum_data: #Back to True
+                    print 'Back to True'
+                    for i in xrange(0,1024):
+                        if list_data[i] != []:
+                            is_looping[i] = True
+                    sum_data /= 2
+                    c = 0
+                    sum_boolean = 0
+                else:
+                    if index1 in label:
+                        label[c].append(index2)
+                    else:
+                        label.append([])
+                        label[c].append(index1) 
+                        label[c].append(index2) 
+
+                    print 'c'+str(c)+' : '+str(label[c])
+                    
+                    for h in xrange(0,6):
+                        hash_tmp.append((int(list_data[index1][h]) + int(list_data[index2][h]))/2)
+
+                    # print 'NEW DATA : '+str(hash_tmp)
+                    list_data[index1] = copy.copy(hash_tmp)
+                    list_data[index2] = copy.copy([])
+                    hash_tmp[:]       = []
+                    c += 1
             else:
                 return True
 
@@ -146,8 +170,7 @@ def process():
 
 def fill_array_is_looping(is_looping):
     for i in xrange(0,1024):
-        for j in xrange(0,1024):
-            is_looping[i][j] = True
+        is_looping[i] = True
 
 def show_data_cluster():
     return 
